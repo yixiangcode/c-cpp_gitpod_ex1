@@ -1,20 +1,24 @@
 #include <stdio.h>
-int theArea(int a, int b); // function prototype
+int time(int a, int b); // function prototype
 
 int main()
 {
-    int n1,n2,area;
-    printf("請輸入長和寬: ");
+    int n1,n2,minute;
+    printf("Please input xx hr xx min: ");
     scanf("%d %d", &n1,&n2);
-    area = theArea(n1, n2);  // function call
-    printf("矩形面積 = %d", area);
+    minute = time(n1, n2);  // function call
+    printf("Result = %d minute\n", minute);
     return 0;
 }
 
-int theArea(int a, int b)         // function definition   
+int time(int a, int b)         // function definition   
 {
     int result;
-    result = a * b;
+    if (a >= 1){
+        result = b + (a * 60);
+    }else{
+        result = b;
+    }
     return result;                     
     //return statement
 }
